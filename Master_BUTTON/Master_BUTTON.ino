@@ -162,7 +162,7 @@ void sendData() {
   const uint8_t *peer_addr = slave.peer_addr;
   Serial.print("Sending: "); Serial.println(data);
   // Send message via ESP-NOW
-  esp_err_t result = esp_now_send(peer_addr, (uint8_t *) &myData, sizeof(myData));
+  esp_err_t result = esp_now_send(peer_addr, (uint8_t *) &data, sizeof(data));
 
   Serial.print("Send Status: ");
   if (result == ESP_OK) {
